@@ -1,31 +1,4 @@
-# Day 5 — Service-to-Service Communication (standalone exercise)
 
-## Why this is a separate project from `one-enterprise-platform`
-
-Days 2–4 all said "continue using your existing services." Day 5 doesn't —
-it walks through building the User Service → Order Service call **from
-scratch**, using a different HTTP client (Spring's newer `RestClient`
-instead of `RestTemplate`), plain endpoint paths (`/users/{id}`, not
-`/api/users/{id}`), and record-based DTOs. That's a deliberate fresh
-teaching exercise, not another increment to the bigger platform — so it
-lives in its own folder rather than being bolted onto Days 1–4's project.
-
-If you're looking for the accumulated platform (gateway, resilience
-patterns, payment service, etc.), that's the separate
-`one-enterprise-platform` project from Days 1–4.
-
-```
-day5-service-communication/
-├── user-service/    → provider API, port 8081
-└── order-service/    → consumer, calls user-service via RestClient, port 8082
-```
-
-## Prerequisites
-
-- Java 17+
-- Maven 3.8+
-
-## Running it
 
 **Terminal 1 — User Service (port 8081)**
 ```bash
